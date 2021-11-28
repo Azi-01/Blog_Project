@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="home_contain container-fluid d-flex p-3">
+    <div class="row row-cols-3">
+    {% for post in page_obj %}
+    <div class="col">
+        <div class="card my-2" style="width: 20rem;">
+            <a href="{% url 'post_detail' post.id %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content_thumb}}</p>
+                    <p class="author_name">by {{post.author}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% if page_obj.has_other_pages %}
+<div class="page_contain">
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a class="btn btn-sm btn-outline-dark" href="?page=1">&laquo; first</a>
+            <a class="btn btn-sm btn-dark" href="?page={{ page_obj.previous_page_number }}">&#8672;</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-sm btn-dark" href="?page={{ page_obj.next_page_number }}">&#8674;</a>
+            <a class="btn btn-sm btn-outline-dark" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
