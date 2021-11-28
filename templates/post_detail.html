@@ -8,5 +8,44 @@
       {{post.get_content|linebreaksbr}}
    </p>
 </div>
+
+<div class="container comments-container">
+   <h5><strong>Comments</strong></h5>
+   <ul class="comments">
+      {% for comment in comments %}
+      <li>
+         <div class="comment">
+            <div>
+            <strong>{{comment.user}}</strong> &#8226; {{comment.text}}
+            </div>
+            {% if comment.user == request.user %}
+            <p><a id="delete" href="{% url 'delete_comment' comment.id %}">Delete</a></p>
+            {%endif%}
+         </div>
+         
+      </li>
+      {% endfor %}
+   </ul>
+   <div class="container comment-form">
+      {% if user.is_authenticated %}
+      <form method="POST">
+         {% csrf_token %}
+         {{form}}
+         <input class="btn btn-success" type="submit" value="Submit">
+      </form>
+      {% else %}
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <p style="color: red;">Login to write comments.</p>
+      <span style="font: bold;"><a href="">Login</a> | <a href="">Sign Up</a></span>
+      </div>
+      {% endif %}
+   </div>
+   
+</div>
+
+<script>
+   text = document.getElementById("id_text")
+   text.setAttribute("placeholder", "Write comment here.")
+</script>
    
 {% endblock %}

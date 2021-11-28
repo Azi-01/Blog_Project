@@ -5,12 +5,13 @@
     <div class="row row-cols-3">
     {% for post in page_obj %}
     <div class="col">
-        <div class="card my-2" style="width: 20rem;">
+        <div class="card my-2" style="width: 25rem;">
             <a href="{% url 'post_detail' post.id %}">
                 <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
                     <p class="card-text">{{post.content_thumb}}</p>
                     <p class="author_name">by {{post.author}}</p>
+                    <p class="date author_name">{{post.date_added | date}}</p>
                 </div>
             </a>
         </div>

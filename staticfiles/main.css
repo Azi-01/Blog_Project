@@ -67,3 +67,7 @@ a.btn{
     height: 25px;
     font-size: x-small;
 }
+
+.comments ul li{
+    list-style: none;
+}
