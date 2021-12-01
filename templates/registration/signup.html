@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container my-4">
+<form class="form-control" method="post">
+    {% csrf_token %}
+    {{form | crispy}}
+    <input class="btn btn-success ms-auto my-3 px-2" type="submit" value="Sign Up">
+</form>
+</div>
+    
+<script>
+    user = document.getElementById("id_username")
+    pass = document.getElementById("id_password1")
+    text = Array.from(document.getElementsByClassName("text-muted"))
+    text.forEach(el => {
+        el.innerHTML = ''
+    });
+
+    user.setAttribute("data-bs-toggle","tooltip")
+    user.setAttribute("data-bs-placement","bottom")
+    user.setAttribute("title","Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.")
+    
+    pass.setAttribute("data-bs-toggle","tooltip")
+    pass.setAttribute("data-bs-placement","bottom")
+    pass.setAttribute("data-bs-html","true")
+    pass.setAttribute("title","• Your password can’t be too similar to your other personal information.\n• Your password must contain at least 8 characters.\n• Your password can’t be a commonly used password.\n• Your password can’t be entirely numeric.\n")
+</script>
+{% endblock %}

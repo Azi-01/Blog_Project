@@ -36,7 +36,7 @@
       {% else %}
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <p style="color: red;">Login to write comments.</p>
-      <span style="font: bold;"><a href="">Login</a> | <a href="">Sign Up</a></span>
+      <span style="font: bold;"><a href="{% url 'login' %}?next={{request.path}}">Login</a> | <a href="">Sign Up</a></span>
       </div>
       {% endif %}
    </div>

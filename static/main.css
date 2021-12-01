@@ -49,11 +49,15 @@ a{
 
 .card{
     border-radius: 10px;
+    margin: 10px 5px;
 }
 
-.card > a:hover{
-    border-radius: 10px;
+.card a{
     color: rgb(56, 56, 56);
+}
+
+.card:hover{
+    border-radius: 10px;
     box-shadow: 0 0 10px 5px rgba(133, 133, 133, 0.39);
 }
 
@@ -61,17 +65,12 @@ a{
     padding: 10px 80px;
 }
 
-.home_contain{
-    display: flex;
-    flex-direction: column;
-}
 
 .page_contain{
     display: flex;
     justify-content: center;
-    position: fixed;
-    bottom: 10px;
-    right: 500px;
+    position: relative;
+    padding: 20px;
 }
 
 a.btn{
@@ -81,14 +80,12 @@ a.btn{
 
 .comments li{
     list-style: none;
-}
-
-li{
     border: 1px solid black;
     border-radius: 5px;
     height: auto;
     width: 80vw;
 }
+
 
 .comment{
     padding: 10px;
@@ -115,4 +112,11 @@ li{
 
 #delete:hover{
     color: red;
+}
+
+.btn.account{
+    height: unset;
+    font-size: small;
+    margin-right: 10px;
+    
 }
