@@ -1,20 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container-fluid">
     <div class="row row-cols-md-3">
     {% for post in page_obj %}
-        <div class="card col" style="max-width: 25rem; min-width: 10rem;">
-            <a href="{% url 'post_detail' post.id %}">
+        <div class="col my-2">
+        <div class="card h-100" style="max-width: 30rem; min-width: 15rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
                     <p class="card-text">{{post.content_thumb}}</p>
+                    <a class="stretched-link" href="{% url 'post_detail' post.id %}"></a>
+                </div>
+                <div class="card-footer">
                     <p class="author_name">by {{post.author}}</p>
                     <p class="date author_name">{{post.date_added | date}}</p>
-                </div>
+                </div>  
+        </div>
+    </div>
+    {% endfor %}
+    {% if user.is_authenticated and user.is_staff and not page_obj.has_next %}
+    <div class="col my-2">
+        <div class="card h-100 custom-card" style="max-width: 30rem; min-width: 15rem;">
+            <a href="/">
+            <div class="circle">
+                <img src="{% static 'images/plus.svg' %}" alt="add_post">
+            </div>
             </a>
         </div>
-    {% endfor %}
+    </div>
+    {% endif %}
     </div>
 {% if page_obj.has_other_pages %}
 <div class="page_contain">

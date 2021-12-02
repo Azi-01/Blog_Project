@@ -18,8 +18,11 @@
             {% else %}
             <a href="{% url 'logout' %}" class="btn btn-dark account">Logout</a>
             {% endif %}
-            <a href=""><img src="{% static 'images/fb.svg' %}" alt="facebook"></a>
-            <a href=""><img src="{% static 'images/ig.svg' %}" alt="instagram"></a>
+            <div class="social">
+                <a href=""><img src="{% static 'images/fb.svg' %}" alt="facebook"></a>
+                <a href=""><img src="{% static 'images/ig.svg' %}" alt="instagram"></a>
+            </div>
+            
         </div>
         
     </nav>

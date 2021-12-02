@@ -30,7 +30,7 @@ main{
 }
 
 .icons{
-    width: 20%;
+    width: 40%;
     display: flex;
     justify-content: end;
     padding: 20px;
@@ -119,4 +119,84 @@ a.btn{
     font-size: small;
     margin-right: 10px;
     
+}
+
+.login-form{
+    width: 70%;
+}
+
+.circle{
+    border: 1px solid rgba(0,0,0,.125);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover{
+    box-shadow: 0 0 10px 5px rgba(133, 133, 133, 0.39);
+}
+
+.circle img{
+    height: 60px;
+}
+
+.custom-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-card:hover{
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 450px){
+    
+.main_nav{
+    display: flex;
+    flex-direction: column;
+    height: 190px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    margin-left: unset;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons img{
+    width: 30px;
+    padding: 2px;
+}
+
+
+.social{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.login-form{
+    width: 100%;
+}
+
+    
+}
+
+@media only screen and (max-width: 300px){
+
+    .login-form span{
+        font-size: small;
+    }
+
 }
