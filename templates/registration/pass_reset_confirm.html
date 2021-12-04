@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container p-4 d-flex justify-content-center">
+<form method="post" class="form-control p-4 d-flex flex-column justify-content-center login-form">
+    {% csrf_token %}
+    {{form | crispy}}
+    <input class="btn btn-outline-dark mx-auto my-4" type="submit" value="Confirm" style="width: 30%;">
+</form>
+</div>
+
+<script>
+    newpass = document.getElementById("id_new_password1")
+    newpass2 = document.getElementById("id_new_password2")
+    hint = document.getElementById("hint_id_new_password1")
+    hint.innerHTML = ''
+    document.getElementById("div_id_new_password1").classList.add("my-3")
+    newpass.style.width = "100%"
+    newpass.setAttribute("data-bs-toggle","tooltip")
+    newpass.setAttribute("data-bs-placement","bottom")
+    newpass.setAttribute("data-bs-html","true")
+    newpass.setAttribute("title","• Your password can’t be too similar to your other personal information.\n• Your password must contain at least 8 characters.\n• Your password can’t be a commonly used password.\n• Your password can’t be entirely numeric.\n")
+</script>
+{% endblock %}

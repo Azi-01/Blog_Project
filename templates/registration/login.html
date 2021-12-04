@@ -7,7 +7,8 @@
 <form method="post" class="form-control p-4 d-flex flex-column justify-content-center align-items-center login-form">
     {% csrf_token %}
     {{form | crispy}}
-    <input class="btn btn-success m-3" type="submit" value="Login">
+    <input class="btn btn-outline-dark m-3" type="submit" value="Login">
+    <span style="white-space: nowrap;"><a href="{% url 'password_reset' %}">Forgot Password</a></span>
     <span style="white-space: nowrap;">Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></span>
 </form>
 {% else %}
