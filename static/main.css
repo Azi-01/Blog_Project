@@ -165,6 +165,7 @@ a.btn{
 
 .title{
     margin-left: unset;
+    margin-top: 20px;
 }
 
 .icons{
@@ -187,7 +188,12 @@ a.btn{
 }
 
 .login-form{
+    width: 25%;
+}
+
+.btn.account{
     width: 100%;
+    margin-right: unset;
 }
 
     
