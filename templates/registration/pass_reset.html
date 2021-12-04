@@ -6,7 +6,7 @@
 <form method="post" class="form-control p-4 d-flex flex-column justify-content-center align-items-center login-form">
     {% csrf_token %}
     {{form | crispy}}
-    <input class="btn btn-outline-dark m-3" type="submit" value="Reset Password" style="width: 25%;">
+    <input class="btn btn-outline-dark m-3" type="submit" value="Reset Password">
 </form>
 </div>
 {% endblock %}

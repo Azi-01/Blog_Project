@@ -10,8 +10,9 @@
 }
 
 main{
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
+
 .title a{
     color: rgb(56, 56, 56);
 }
@@ -122,7 +123,8 @@ a.btn{
 }
 
 .login-form{
-    width: 70%;
+    width: 60vw;
+    height: 50vh;
 }
 
 .circle{
@@ -151,6 +153,31 @@ a.btn{
 
 .custom-card:hover{
     box-shadow: none;
+}
+
+.container h5 strong::before{
+    content: "\2022";
+}
+
+@media only screen and (max-width: 750px){
+    .container p#content{
+        padding: unset;
+    }
+
+    .container{
+        padding: unset;
+        text-align: center;
+        text-justify: auto;
+    }
+
+    .container h5 strong::before{
+        content: "";
+    }
+
+    .login-form{
+        width: 85vw;
+        height: 45vh;
+    }
 }
 
 @media only screen and (max-width: 450px){
@@ -188,7 +215,8 @@ a.btn{
 }
 
 .login-form{
-    width: 25%;
+    width: 85vw;
+    height: 50vh;
 }
 
 .btn.account{
@@ -196,13 +224,30 @@ a.btn{
     margin-right: unset;
 }
 
+.signup-form{
+    width: 85vw;
+    height: 65vh;
+}
+
     
+}
+
+@media only screen and (max-width: 350px){
+    .signup-form{
+        width: 90vw;
+        height: 70vh;
+    }
+
 }
 
 @media only screen and (max-width: 300px){
 
     .login-form span{
         font-size: small;
+    }
+
+    .page_contain{
+        padding: 20px 0px;
     }
 
 }
