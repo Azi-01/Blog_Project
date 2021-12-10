@@ -85,13 +85,12 @@ a.btn{
     border-radius: 5px;
     height: auto;
     width: 80vw;
+    overflow-wrap: break-word;
 }
 
 
 .comment{
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .comment-form form{
@@ -109,10 +108,6 @@ a.btn{
     width: 80px;
     margin-left: 10px;
     
-}
-
-#delete:hover{
-    color: red;
 }
 
 .btn.account{
@@ -155,13 +150,78 @@ a.btn{
     box-shadow: none;
 }
 
-.container h5 strong::before{
+.container h4 strong::before{
     content: "\2022";
 }
 
+
+.modal-footer a.btn{
+    height: 30%;
+    width: 12%;
+    font-size: unset;
+}
+
+input#id_title{
+    border: 1px solid #EEEEEE;
+    box-shadow: 1px 1px 0 #DDDDDD;
+    display: block;
+    font-family: 'Marck Script',cursive;
+    font-size: 22px;
+    line-height: 50px;
+    margin: 2% auto;
+    padding: 11px 20px 0 200px;
+    resize: none;
+    min-width: 300px;
+     
+    background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0);
+    -webkit-background-size:  100% 50px;
+    background-size: 100% 50px; 
+}
+
+textarea#id_content{
+    border: 1px solid #EEEEEE;
+    box-shadow: 1px 1px 0 #DDDDDD;
+    display: block;
+    font-family: 'Marck Script',cursive;
+    font-size: 22px;
+    line-height: 50px;
+    margin: 2% auto;
+    padding: 11px 20px 0 70px;
+    resize: none;
+    min-width: 300px;
+
+    background-image: -moz-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0px), -moz-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -moz-radial-gradient(3.9% 46% , circle closest-corner, #CCCCCC, #CCCCCC 43.5%, transparent 0%); 
+    background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0), -webkit-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -webkit-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc 43.5%, transparent 0%);
+    
+    -webkit-background-size:  100% 50px;
+    background-size: 100% 50px;
+}
+
+#content{
+    text-align: left;
+    border: 1px solid #EEEEEE;
+    box-shadow: 1px 1px 0 #DDDDDD;
+    display: block;
+    font-family: 'Marck Script',cursive;
+    font-size: 22px;
+    line-height: 50px;
+    margin: 2% auto;
+    padding: 11px 20px 0 70px;
+    resize: none;
+    min-width: 20px;
+    min-height: 640px;
+    
+    background-image: -moz-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0px), -moz-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -moz-radial-gradient(3.9% 46% , circle closest-corner, #CCCCCC, #CCCCCC 43.5%, transparent 0%); 
+    background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0), -webkit-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%), -webkit-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc 43.5%, transparent 0%);
+    
+    -webkit-background-size:  100% 50px;
+    background-size: 100% 50px;
+}
+
 @media only screen and (max-width: 750px){
+
     .container p#content{
-        padding: unset;
+        padding: 10px 10px 10px 60px;
     }
 
     .container{
@@ -177,6 +237,19 @@ a.btn{
     .login-form{
         width: 85vw;
         height: 45vh;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .comment-form form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .btn-success{
+        margin-top: 10px;
     }
 }
 
@@ -229,7 +302,13 @@ a.btn{
     height: 65vh;
 }
 
-    
+
+.btn-success{
+    font-size: smaller;
+    width: 30%;
+    height: 10%;
+}
+
 }
 
 @media only screen and (max-width: 350px){
@@ -238,9 +317,17 @@ a.btn{
         height: 70vh;
     }
 
+    .comment{
+        flex-direction: column;
+    }
+
 }
 
 @media only screen and (max-width: 300px){
+
+    .container p#content{
+        padding: 10px 5px 10px 40px;
+    }
 
     .login-form span{
         font-size: small;

@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 # Create your views here.
 def home(request):
@@ -27,6 +27,26 @@ def post_detail(request, pk):
         comment_form = CommentForm()
     context = {'post': post, 'comments': comments, 'form': comment_form}
     return render(request, 'post_detail.html', context)
+
+def create_post(request):
+    if request.method == "POST":
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            new_post = form.save(commit=False)
+            new_post.author = request.user
+            new_post.save()
+            return redirect(f'/posts/{new_post.id}')
+    else:
+        form = PostForm()
+    context = {'form': form}
+    return render(request, 'create_post.html', context)
+
+
+def delete_post(request, pk):
+    post = Post.objects.get(id=pk)
+    post.delete()
+    return redirect('/')
+
 
 def delete_comment(request, pk):
     comment = Comment.objects.get(id=pk)

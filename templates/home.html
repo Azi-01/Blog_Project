@@ -22,7 +22,7 @@
     {% if user.is_authenticated and user.is_staff and not page_obj.has_next %}
     <div class="col my-2">
         <div class="card h-100 custom-card" style="max-width: 30rem; min-width: 15rem;">
-            <a href="admin/pages/post/">
+            <a href="{% url 'create_post' %}">
             <div class="circle">
                 <img src="{% static 'images/plus.svg' %}" alt="add_post">
             </div>
